@@ -38,7 +38,12 @@ class EMRServerlessOperator(OperatorStrategy):
                 'sparkSubmit': {
                     'entryPoint': task_config.get('entrypoint'),
                     'entryPointArguments': task_config.get('args'),
-                    "sparkSubmitParameters": "--conf spark.submit.pyFiles=s3://prod-datalake-artifacts/jobs/delta.py  --conf spark.executor.cores=1 --conf spark.executor.memory=4g --conf spark.driver.cores=1 --conf spark.driver.memory=4g --conf spark.executor.instances=1 --conf spark.dynamicAllocation.maxExecutors=1",
+                    "sparkSubmitParameters": "--conf spark.submit.pyFiles=s3://prod-datalake-artifacts/jobs/delta.py  \
+                        --conf spark.executor.cores=1 --conf spark.executor.memory=4g --conf spark.driver.cores=1 \
+                            --conf spark.driver.memory=4g --conf spark.executor.instances=1 --conf spark.dynamicAllocation.maxExecutors=1 \
+                                --conf spark.jars.packages=io.delta:delta-spark_2.12:3.2.0 \
+                                --conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension \
+                                --conf spark.sql.catalog.spark_catalog : org.apache.spark.sql.delta.catalog.DeltaCatalog"
                 }
             },
             configuration_overrides={

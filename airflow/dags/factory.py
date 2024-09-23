@@ -3,7 +3,7 @@
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.dummy import DummyOperator
-from dags.airflow_utils import Utils
+from airflow_utils import Utils
 from airflow.utils.task_group import TaskGroup
 from operator_factory import OperatorFactory
 

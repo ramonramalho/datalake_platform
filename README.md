@@ -20,7 +20,7 @@ A arquitetura da plataforma de ingestão de dados segue uma abordagem em pipelin
 
 ### 1. **Fonte de Dados**
 
-- APIs REST
+- APIs REST [openbrewerydb](https://www.openbrewerydb.org/)
 
 ### 2. **Camada de Ingestão**
 
@@ -67,7 +67,7 @@ Primeiramente, se você não possui o aws-cli instalado, faça o download e a co
      terraform apply
 
   Se você optar por executar o Airflow localmente, comente o código da instância EC2, criação de security group e chave ssh.
-  Siga os passos de execução dessa documentação do Airflow (link da doc)
+  Siga os passos de execução dessa [documentação do Airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
 
 3. **Fase 2: Copiar Dags e Arquivos pro S3**
    - Copie os códigos Spark para o bucket prod-artifacts-datalake na pasta jobs

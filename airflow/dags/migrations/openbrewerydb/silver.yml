@@ -17,5 +17,5 @@ tasks:
       spark.sql.extensions :  io.delta.sql.DeltaSparkSessionExtension
       spark.sql.catalog.spark_catalog : org.apache.spark.sql.delta.catalog.DeltaCatalog
     args:
-      - s3://prod-bronze-datalake/api/openbrewerydb/year={year}/month={month}/day={day}
+      - s3://prod-bronze-datalake/api/openbrewerydb/*.json
       - s3://prod-silver-datalake/openbrewerydb
