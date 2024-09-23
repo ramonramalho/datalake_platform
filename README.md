@@ -65,10 +65,12 @@ Primeiramente, se você não possui o aws-cli instalado, faça o download e a co
     
      # Executar terraform apply para criar os recursos
      terraform apply
+   
+   Assim que o terraform for executado alguns outputs como DNS público, IP público da instância EC2 e a EMR role criada. Substituir o EMR role nos arquivos ymls criados
 
   Se você optar por executar o Airflow localmente, comente o código da instância EC2, criação de security group e chave ssh.
   Siga os passos de execução dessa [documentação do Airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
-
+  
 3. **Fase 2: Copiar Dags e Arquivos pro S3**
    - Copie os códigos Spark para o bucket prod-artifacts-datalake na pasta jobs
    - Copie as DAGs para a pasta em que o Airflow está configurado. Para a instância EC2 utilize o ssh para copiar os arquivos para dentro da instância criada.
