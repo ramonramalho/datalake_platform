@@ -71,15 +71,15 @@ Primeiramente, se você não possui o aws-cli instalado, faça o download e a co
   Se você optar por executar o Airflow localmente, comente o código da instância EC2, criação de security group e chave ssh.
   Siga os passos de execução dessa [documentação do Airflow](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
   
-3. **Fase 2: Copiar Dags e Arquivos pro S3**
+2. **Fase 2: Copiar Dags e Arquivos pro S3**
    - Copie os códigos Spark para o bucket prod-artifacts-datalake na pasta jobs
    - Copie as DAGs para a pasta em que o Airflow está configurado. Para a instância EC2 utilize o ssh para copiar os arquivos para dentro da instância criada.
    - Ative as DAGs anativas e acompanhe o processo de transição
 
-4. **Fase 3: Monitoramento e Alertas**
+3. **Fase 3: Monitoramento e Alertas**
    - Nessa fase ainda não foram implementados alertas. Um possível alerta simples de ser implementado futuramente é a conexão com o Slack para aviso de falhas nos pipelines.
 
-5. **Fase 4: Escalabilidade e Otimização**
+4. **Fase 4: Escalabilidade e Otimização**
    - É possível alterar todos os atributos das DAGs pelos arquivos yml, inclusive adicionar novos pipelines, aumentar infraestrutura, lidar com dependências entre as DAGs.
 
 ## Conclusão
