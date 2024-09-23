@@ -2,7 +2,7 @@
 
 ## Visão Geral
 
-A **Plataforma de Ingestão de Dados** tem como objetivo coletar, processar e armazenar dados da API (acrescentar nome da API) em uma infraestrutura de dados centralizada para análises, relatórios e visualizações. O sistema será escalável e pode ser executado localmente ou na nuvem.
+A **Plataforma de Ingestão de Dados** tem como objetivo coletar, processar e armazenar dados da API [openbrewerydb](https://www.openbrewerydb.org/) em uma infraestrutura de dados centralizada para análises, relatórios e visualizações. O sistema será escalável e pode ser executado localmente ou na nuvem.
 
 ## Objetivos
 
