@@ -24,8 +24,7 @@ class EMRServerlessOperator(OperatorStrategy):
             job_type="SPARK",
             release_label="emr-6.6.0",
             config={
-                "name": f"{task_config.get('task_id')}",
-                "runtime-configuration" : [task_config.get("runtime_configuration")]},
+                "name": f"{task_config.get('task_id')}"},
         )
 
         application_id = create_app.output
@@ -46,9 +45,11 @@ class EMRServerlessOperator(OperatorStrategy):
                                 --conf spark.sql.catalog.spark_catalog : org.apache.spark.sql.delta.catalog.DeltaCatalog"
                 }
             },
-            configuration_overrides={
-                'monitoringConfiguration': {
-                    's3MonitoringConfiguration': {}
+            configuration_overrides = {
+                "monitoringConfiguration": {
+                    "s3MonitoringConfiguration": {
+                        "logUri": "s3://prod-datalake-artifacts/jobs"
+                    }
                 }
             }
         )
