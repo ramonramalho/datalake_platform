@@ -16,7 +16,7 @@ A **Plataforma de Ingestão de Dados** tem como objetivo coletar, processar e ar
 
 A arquitetura da plataforma de ingestão de dados segue uma abordagem em pipeline, organizada nas seguintes camadas:
 
-(Acrescentar desenho)
+![Arquitetura](./arch.png)
 
 ### 1. **Fonte de Dados**
 
